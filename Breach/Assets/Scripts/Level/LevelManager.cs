@@ -150,4 +150,17 @@ public class LevelManager : MonoBehaviour
         levelClearedUI.SetActive(true);
     }
 
+    public Vector3 CameraPosition()
+    { 
+        if (mainCamera.enabled)
+            return mainCamera.transform.position;
+
+        return finishCamera.transform.position;
+    }
+
+    public bool IsMainCameraActive()
+    {
+        return mainCamera.isActiveAndEnabled;
+    }
+
 }

@@ -20,7 +20,7 @@ public class FireTurret : Turret
     public override void Start()
     {
         base.Start();
-        InvokeRepeating("UpdateTarget", 0f, 0.5f);
+        InvokeRepeating("UpdateTarget", 0f, 1/attackSpeed);
     }
 
     public override void Update()
@@ -49,7 +49,7 @@ public class FireTurret : Turret
 
             var enemigo = enemy?.GetComponent<Enemy>();
 
-            if (enemigo != null && enemigo.IsAlive() && !enemigo.IsBurned())
+            if (enemigo != null && enemigo.IsAlive() && !enemigo.IsBurned() && !enemigo.IsFireTargeted())
             {
                 float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
                 if (distanceToEnemy < shortestDistance)
@@ -76,7 +76,10 @@ public class FireTurret : Turret
         GameObject bullet = Instantiate<GameObject>(bulletPrefab, firePoint.position, firePoint.rotation);
 
         if (bullet != null)
+        {
             bullet.GetComponent<Projectile>().SetProjectileValues(target, damage, dotDamage: burnDamage, dotDuration: burnDuration, numberOfTicks: numberOfTicks, damageType: attackType);
+            target.GetComponent<Enemy>().SetFireTargeted();
+        }
 
     }
 }

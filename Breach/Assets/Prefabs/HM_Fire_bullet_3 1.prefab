@@ -14484,12 +14484,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1637505527600324}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 807a988a1765edd439007be8fbee2c70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 5
+  Speed: 30
   target: {fileID: 0}
   impactParticle: {fileID: 1774194356795996, guid: e6f0ab24aa19deb41ad52c69a2f7ccf2, type: 3}
   impactNormal: {x: 0, y: 0, z: 0}
@@ -14519,7 +14519,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2aa1b39894e24d4cba89603d0497b46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
+  speed: 100
   damage: 0
   dotDamage: 0
   dotDuration: 0

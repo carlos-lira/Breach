@@ -87,7 +87,7 @@ MonoBehaviour:
   attackType: 1
   bulletPrefab: {fileID: 1637505527600324, guid: 50176204ab985bc4a9b7aaf7885ae1ac, type: 3}
   firePoint: {fileID: 4126636819920754}
-  attackSpeed: 0.5
+  attackSpeed: 10
   burnDamage: 5
   burnDuration: 5
   numberOfTicks: 10

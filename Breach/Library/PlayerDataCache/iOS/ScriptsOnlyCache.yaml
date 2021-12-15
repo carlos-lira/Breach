@@ -1113,4 +1113,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Level01.unity
   - Assets/Scenes/Level02.unity
   - Assets/Scenes/Level03.unity
-  playerPath: D:/Unity/Breach/Breach/APP
+  playerPath: D:/Unity/APP

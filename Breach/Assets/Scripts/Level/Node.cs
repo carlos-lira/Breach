@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Node : MonoBehaviour
 {
@@ -23,7 +24,10 @@ public class Node : MonoBehaviour
     {
         if (isBuildable && BuildManager.instance.CanBuild())
         {
-            renderer.material.color = hoverColor;
+            if (EventSystem.current.IsPointerOverGameObject())
+                return;
+
+             renderer.material.color = hoverColor;
         }
         else
         { 

@@ -57,7 +57,7 @@ MonoBehaviour:
   firePoint: {fileID: 4720060757848974}
   laserImpactEffect: {fileID: 9013968870758084815}
   laserImpactLight: {fileID: 6770307329513480996}
-  damageInterval: 0.5
+  damageInterval: 1
 --- !u!135 &1821938334277707603
 SphereCollider:
   m_ObjectHideFlags: 0

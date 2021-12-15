@@ -2,12 +2,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
     [Header("Dependencies")]
     [SerializeField] private LevelManager levelManager;
     [SerializeField] private Animator anim;
+    [SerializeField] private Slider slider;
 
 
     [Header("Stats")]
@@ -20,24 +22,26 @@ public class Enemy : MonoBehaviour
 
     [Header("Debuffs")]
     [SerializeField] private bool isBurned = false;
-
+    [SerializeField] private bool fireTargeted = false;
     private Transform target;
     private int waypointIndex = 0;
     private float currentSpeed = 0f;
 
     private Renderer renderer;
     private Color initialColor;
-
+    private float initialHealth;
 
     private void Awake()
     {
-        renderer = GetComponent<Renderer>();
+        renderer = GetComponentInChildren<Renderer>();
         if (renderer != null)
         {
             initialColor = renderer.material.color;
         }
         currentSpeed = initialSpeed;
         anim = GetComponent<Animator>();
+        initialHealth = health;
+
     }
 
     private void Start()
@@ -51,10 +55,12 @@ public class Enemy : MonoBehaviour
     }
     public virtual void Move()
     {
+        FaceTarget();
+
         Vector3 dir = target.position - transform.position;
         transform.Translate(dir.normalized * currentSpeed * Time.deltaTime, Space.World);
 
-        if (Vector3.Distance(transform.position, target.position) < 0.2f)
+        if (Vector3.Distance(transform.position, target.position) < 0.5f)
         {
             GetNextWaypoint();
         }
@@ -84,6 +90,9 @@ public class Enemy : MonoBehaviour
         }
 
         this.health -= damageAfterResistance;
+
+        if (slider != null)
+            slider.value = health/initialHealth;
 
         if (health <= 0)
         {
@@ -121,6 +130,20 @@ public class Enemy : MonoBehaviour
         if (damageType == AttackType.FIRE)
         {
             RemoveBurn();
+        }
+    }
+
+    public void FaceTarget()
+    {
+        if (this.target != null)
+        {
+            Vector3 direction = (target.position - transform.position).normalized;
+
+            //Removing Y axis to avoid weird model positioning
+            direction = new Vector3(direction.x, 0, direction.z);
+
+            Quaternion lookRotation = Quaternion.LookRotation(direction);
+            transform.rotation = lookRotation;
         }
     }
 
@@ -166,7 +189,18 @@ public class Enemy : MonoBehaviour
     private void RemoveBurn()
     {
         isBurned = true;
+        fireTargeted = false;
         renderer.material.color = initialColor;
+    }
+
+    public void SetFireTargeted()
+    { 
+        fireTargeted = true;
+    }
+
+    public bool IsFireTargeted()
+    {
+        return fireTargeted;
     }
 
 }
