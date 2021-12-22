@@ -18,6 +18,9 @@ public class LevelManager : MonoBehaviour
     }
     #endregion
 
+    [Header("Dependencies")]
+    [SerializeField] private AudioClip music;
+
     [Header("Settings")]
     [SerializeField] private bool isPaused = false;
     [SerializeField] private float speed = 1f;
@@ -33,9 +36,10 @@ public class LevelManager : MonoBehaviour
     private bool checkForWinner = false;
     private bool isGameOver = false;
 
-
     private void Start()
     {
+        SoundManager.instance.PlayMusic(music);
+
         checkForWinner = false;
         mainCamera.enabled = true;
         finishCamera.enabled = false;
@@ -61,6 +65,7 @@ public class LevelManager : MonoBehaviour
     public void GameOver(bool levelCleared = false)
     {
         Debug.Log("THE GAME IS OVER!");
+        Time.timeScale = 0;
         isGameOver = true;
         if (levelCleared)
         {

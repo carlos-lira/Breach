@@ -30,6 +30,9 @@ public class LaserTurret : Turret
         {
             collider.radius = range;
         }
+
+        audioSource.clip = attackSound;
+        audioSource.loop = true;
     }
 
     public override void Start()
@@ -63,6 +66,8 @@ public class LaserTurret : Turret
                 UpdateLaser();
             }
         }
+
+
     }
 
 
@@ -114,7 +119,7 @@ public class LaserTurret : Turret
                 lineRenderer.enabled = true;
                 laserImpactEffect.Play();
                 laserImpactLight.enabled = true;
-
+                audioSource.Play();
                 StartCoroutine(DealDamageOverTime());
             }
         }
@@ -144,6 +149,7 @@ public class LaserTurret : Turret
         laserImpactLight.enabled = false;
         
         currentDamage = damage;
+        audioSource.Stop();
         StopCoroutine(DealDamageOverTime());
     }
 

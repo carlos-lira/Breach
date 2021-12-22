@@ -64,12 +64,14 @@
     <Compile Include="Assets\ExternalAssets\TowerDefence_Vsquad\Scripts\Aux_Enemy.cs" />
     <Compile Include="Assets\Scripts\UI\InGameCanvasManager.cs" />
     <Compile Include="Assets\Scripts\Models\Wave.cs" />
+    <Compile Include="Assets\MenuManager.cs" />
     <Compile Include="Assets\Scripts\Level\WaveSpawner.cs" />
     <Compile Include="Assets\Scripts\Models\SoundSettings.cs" />
     <Compile Include="Assets\Scripts\Enums\SceneIndexes.cs" />
     <Compile Include="Assets\Scripts\Level\LevelManager.cs" />
     <Compile Include="Assets\Scripts\Level\Player.cs" />
     <Compile Include="Assets\Scripts\Level\Turrets\LaserTurret.cs" />
+    <Compile Include="Assets\LookAtCamera.cs" />
     <Compile Include="Assets\Scripts\SoundManager.cs" />
     <Compile Include="Assets\Scripts\Level\Turrets\FireTurret.cs" />
     <Compile Include="Assets\Scripts\Level\Enemy.cs" />
@@ -88,7 +90,8 @@
     <Compile Include="Assets\ExternalAssets\TowerDefence_Vsquad\Scripts\Aux_EnemyHp.cs" />
     <Compile Include="Assets\Scripts\UI\LevelsMenu.cs" />
     <Compile Include="Assets\Scripts\Enums\EnumUtils\SceneIndexComponent.cs" />
-    <Compile Include="Assets\LookAtCamera.cs" />
+    <Compile Include="Assets\ButtonFX.cs" />
+    <Compile Include="Assets\Sound\SfxSlider.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\ExternalAssets\TowerDefence_Vsquad\INFO\Info.txt" />

@@ -77,6 +77,7 @@ public class FireTurret : Turret
 
         if (bullet != null)
         {
+            PlayAttackSound();
             bullet.GetComponent<Projectile>().SetProjectileValues(target, damage, dotDamage: burnDamage, dotDuration: burnDuration, numberOfTicks: numberOfTicks, damageType: attackType);
             target.GetComponent<Enemy>().SetFireTargeted();
         }

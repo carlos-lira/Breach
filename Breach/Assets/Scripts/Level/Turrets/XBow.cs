@@ -77,7 +77,10 @@ public class XBow : Turret
         GameObject bullet = Instantiate<GameObject>(bulletPrefab, firePoint.position, firePoint.rotation);
 
         if (bullet != null)
+        {
+            PlayAttackSound();
             bullet.GetComponent<Projectile>().SetProjectileValues(target, damage);
+        }
 
     }
 }

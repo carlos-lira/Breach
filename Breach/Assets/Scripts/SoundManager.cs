@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-
-    public AudioSource audioSource;
+    public AudioSource musicAudioSource;
+    public AudioSource sfxAudioSource;
 
     public SoundSettings soundSettings;
     #region Singleton
@@ -21,9 +21,14 @@ public class SoundManager : MonoBehaviour
         instance = this;
         
         GetSoundSettings();
-        audioSource = GetComponent<AudioSource>();
+        UpdateAudioSources();
     }
     #endregion
+
+    private void Update()
+    {
+        UpdateAudioSources();
+    }
 
     void GetSoundSettings()
     {
@@ -82,7 +87,38 @@ public class SoundManager : MonoBehaviour
         int sfxMuteStatus = soundSettings.sfxMuted ? 1 : 0;
         PlayerPrefs.SetFloat("SfxVolume", soundSettings.sfxVolume);
         PlayerPrefs.SetInt("SfxMuted", sfxMuteStatus);
+
+        UpdateAudioSources();
     }
 
+    private void UpdateAudioSources()
+    {
+        musicAudioSource.mute = (soundSettings.masterMuted || soundSettings.musicMuted);
+        musicAudioSource.volume = soundSettings.masterVolume * soundSettings.musicVolume;
+
+        sfxAudioSource.mute = (soundSettings.masterMuted || soundSettings.sfxMuted);
+        sfxAudioSource.volume = soundSettings.masterVolume * soundSettings.sfxVolume;
+    }
+
+    public void PlayMusic(AudioClip music)
+    {
+        musicAudioSource.clip = music;
+        musicAudioSource.Play();
+    }
+
+    public void PlaySfx(AudioClip sfx)
+    {
+        sfxAudioSource.PlayOneShot(sfx);
+    }
+
+    public bool GetSfxMuteValue()
+    { 
+        return (soundSettings.masterMuted || soundSettings.sfxMuted);
+    }
+
+    public float GetSfxLevel()
+    { 
+        return soundSettings.masterVolume * soundSettings.sfxVolume;
+    }
 
 }

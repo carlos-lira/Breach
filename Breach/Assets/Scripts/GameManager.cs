@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-
+    public AudioMixerGroup audioMixerGroup;
     public bool debugMode = false;
     public int playerProgress = 0;
     int previousScene = 0;

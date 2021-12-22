@@ -6,6 +6,9 @@ public class Player : MonoBehaviour
 {
     #region Singleton
     public static Player instance;
+    [SerializeField] private AudioClip hurtSound;
+
+    private AudioSource audioSource;
 
     private void Awake()
     {
@@ -14,6 +17,9 @@ public class Player : MonoBehaviour
             Debug.LogError("More than one player in scene");
             return;
         }
+
+        audioSource = GetComponent<AudioSource>();
+
         instance = this;
     }
     #endregion
@@ -21,7 +27,13 @@ public class Player : MonoBehaviour
     [SerializeField] private bool alive = true;
     [SerializeField] private float health = 200f;
     [SerializeField] private float money = 300f;
-    
+
+    private void Update()
+    {
+        audioSource.mute = SoundManager.instance.GetSfxMuteValue();
+        audioSource.volume = SoundManager.instance.GetSfxLevel();
+    }
+
     public bool Alive()
     {
         return alive;
@@ -35,6 +47,7 @@ public class Player : MonoBehaviour
     public void DamagePlayer(float damage)
     { 
         health -= damage;
+        audioSource.PlayOneShot(hurtSound);
 
         if (health <= 0)
         { 
