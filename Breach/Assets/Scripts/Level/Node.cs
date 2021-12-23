@@ -22,6 +22,7 @@ public class Node : MonoBehaviour
 
     private void OnMouseEnter()
     {
+        /*
         if (isBuildable && BuildManager.instance.CanBuild())
         {
             if (EventSystem.current.IsPointerOverGameObject())
@@ -33,11 +34,14 @@ public class Node : MonoBehaviour
         { 
             renderer.material.color = unAvailableColor;
         }
+        */
     }
 
     private void OnMouseExit()
     {
+        /*
         renderer.material.color = startColor;
+        */
     }
 
     private void OnMouseDown()
@@ -45,6 +49,7 @@ public class Node : MonoBehaviour
         if (turret != null || !isBuildable || !BuildManager.instance.CanBuild())
         {
             Debug.Log("Cant build");
+            StartCoroutine(UnableToBuildColor());
             return;
         }
 
@@ -56,5 +61,12 @@ public class Node : MonoBehaviour
     { 
         this.turret = turret;
         isBuildable = false;
+    }
+
+    private IEnumerator UnableToBuildColor()
+    {
+        renderer.material.color = unAvailableColor;
+        yield return new WaitForSeconds(0.2f);
+        renderer.material.color = startColor;
     }
 }
