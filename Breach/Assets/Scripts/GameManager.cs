@@ -125,6 +125,8 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            loadingScreen.SetActive(true);
+
             scenesLoading.Add(SceneManager.UnloadSceneAsync(currentScene));
             scenesLoading.Add(SceneManager.LoadSceneAsync(currentScene + 1, LoadSceneMode.Additive));
 

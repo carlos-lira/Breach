@@ -59,23 +59,24 @@
     <Compile Include="Assets\Scripts\UI\MainCanvasUI.cs" />
     <Compile Include="Assets\Scripts\Level\Shop.cs" />
     <Compile Include="Assets\Scripts\Level\Turrets\Turret.cs" />
+    <Compile Include="Assets\Scripts\UI\ShowNextLevel.cs" />
     <Compile Include="Assets\Scripts\UI\InGameCanvasManager.cs" />
     <Compile Include="Assets\Scripts\Models\Wave.cs" />
-    <Compile Include="Assets\Scripts\MenuManager.cs" />
+    <Compile Include="Assets\Scripts\UI\MenuManager.cs" />
     <Compile Include="Assets\Scripts\Level\WaveSpawner.cs" />
     <Compile Include="Assets\Scripts\Models\SoundSettings.cs" />
     <Compile Include="Assets\Scripts\Enums\SceneIndexes.cs" />
     <Compile Include="Assets\Scripts\Level\LevelManager.cs" />
     <Compile Include="Assets\Scripts\Level\Player.cs" />
     <Compile Include="Assets\Scripts\Level\Turrets\LaserTurret.cs" />
-    <Compile Include="Assets\Scripts\LookAtCamera.cs" />
-    <Compile Include="Assets\Scripts\SoundManager.cs" />
+    <Compile Include="Assets\Scripts\Level\LookAtCamera.cs" />
+    <Compile Include="Assets\Scripts\Level\SoundManager.cs" />
     <Compile Include="Assets\Scripts\Level\Turrets\FireTurret.cs" />
     <Compile Include="Assets\Scripts\Level\Enemy.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Level\Node.cs" />
     <Compile Include="Assets\Scripts\Level\Projectile.cs" />
-    <Compile Include="Assets\Scripts\ButtonFX.cs" />
+    <Compile Include="Assets\Scripts\UI\ButtonFX.cs" />
     <Compile Include="Assets\Scripts\UI\OptionsUI.cs" />
     <Compile Include="Assets\Scripts\Level\BuildManager.cs" />
     <Compile Include="Assets\Scripts\Enums\TurretEnum.cs" />
@@ -83,7 +84,6 @@
     <Compile Include="Assets\Scripts\Level\Waypoints.cs" />
     <Compile Include="Assets\Scripts\UI\LevelsMenu.cs" />
     <Compile Include="Assets\Scripts\Enums\EnumUtils\SceneIndexComponent.cs" />
-    <Compile Include="Assets\Scripts\ShowNextLevel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Scripts\Scripts.asmdef" />

@@ -192,7 +192,7 @@ public class Enemy : MonoBehaviour
 
     private void RemoveBurn()
     {
-        isBurned = true;
+        isBurned = false;
         fireTargeted = false;
 
         if (renderer != null)

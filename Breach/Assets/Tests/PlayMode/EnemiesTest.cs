@@ -121,6 +121,9 @@ namespace Tests
             yield return new WaitForSeconds(1f / 5);
             Assert.AreEqual(true, enemy.IsBurned());
             Assert.AreEqual(100f, enemy.health);
+            yield return new WaitForSeconds(1f / 5);
+            Assert.AreEqual(false, enemy.IsBurned());
+            Assert.AreEqual(100f, enemy.health);
 
             Assert.AreEqual(enemy.IsAlive(), true);
 

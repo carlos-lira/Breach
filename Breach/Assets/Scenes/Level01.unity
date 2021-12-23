@@ -2302,6 +2302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b2d4da81cd6b004984e62dc01981a29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioMixerGroup: {fileID: 0}
   debugMode: 1
   playerProgress: 0
   loadingScreen: {fileID: 0}
@@ -5227,6 +5228,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 7034562274284033044, guid: 7e25b1b40e7537049ad1a7a6d023bdc4, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034562274284033044, guid: 7e25b1b40e7537049ad1a7a6d023bdc4, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034562274284033044, guid: 7e25b1b40e7537049ad1a7a6d023bdc4, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7034562274345409461, guid: 7e25b1b40e7537049ad1a7a6d023bdc4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -5307,6 +5320,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 7034562274931007502, guid: 7e25b1b40e7537049ad1a7a6d023bdc4, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034562274931007502, guid: 7e25b1b40e7537049ad1a7a6d023bdc4, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034562274931007502, guid: 7e25b1b40e7537049ad1a7a6d023bdc4, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7034562275531146238, guid: 7e25b1b40e7537049ad1a7a6d023bdc4, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -5318,6 +5343,18 @@ PrefabInstance:
     - target: {fileID: 7034562275569997776, guid: 7e25b1b40e7537049ad1a7a6d023bdc4, type: 3}
       propertyPath: m_SizeDelta.y
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034562275791988036, guid: 7e25b1b40e7537049ad1a7a6d023bdc4, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034562275791988036, guid: 7e25b1b40e7537049ad1a7a6d023bdc4, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034562275791988036, guid: 7e25b1b40e7537049ad1a7a6d023bdc4, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e25b1b40e7537049ad1a7a6d023bdc4, type: 3}
