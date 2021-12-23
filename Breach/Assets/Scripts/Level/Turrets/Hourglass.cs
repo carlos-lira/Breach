@@ -20,8 +20,26 @@ public class Hourglass : Turret
     public override void Start()
     {
         base.Start();
+
+        //Slow all enemies at range upon placement
     }
 
+    public override void Update()
+    {
+        base.Update();
+
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (GameObject enemy in enemies)
+        {
+            float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
+            if (distanceToEnemy < range)
+            {
+                enemy.GetComponent<Enemy>().ReduceSpeed(slowFactor,attackType);
+            }
+        }
+    }
+
+    /*
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Enemy"))
@@ -33,7 +51,7 @@ public class Hourglass : Turret
             }
         }
     }
-
+    */
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Enemy"))

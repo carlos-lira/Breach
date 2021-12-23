@@ -10,7 +10,17 @@
       "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
       "DisplayName": "Miscellaneous Files",
       "ColorIndex": -1
+    },
+    "5a53c9b7-ff0a-07ea-746b-fcf153123ad1": {
+      "ProjectGuid": "5a53c9b7-ff0a-07ea-746b-fcf153123ad1",
+      "DisplayName": "PlayMode",
+      "ColorIndex": 1
+    },
+    "7e0e5562-9eba-75ca-25c6-e5a4c28f3a57": {
+      "ProjectGuid": "7e0e5562-9eba-75ca-25c6-e5a4c28f3a57",
+      "DisplayName": "Scripts",
+      "ColorIndex": 2
     }
   },
-  "NextColorIndex": 1
+  "NextColorIndex": 3
 }

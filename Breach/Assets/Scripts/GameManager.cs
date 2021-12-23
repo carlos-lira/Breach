@@ -132,6 +132,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public bool IsThisTheLastLevel()
+    {
+        int currentScene = GetCurrentScene();
+        return (currentScene + 1 >= SceneManager.sceneCountInBuildSettings);
+    }
+
     public void GoToMainMenu()
     {
         int currentScene = GetCurrentScene();

@@ -13,12 +13,12 @@ public class Enemy : MonoBehaviour
 
 
     [Header("Stats")]
-    [SerializeField] private AttackType resistanceType = AttackType.NONE;
-    [SerializeField] [Range(0,1)] private float resistanceFactor = 0f;
-    [SerializeField] private float health = 10;
-    [SerializeField] private float initialSpeed = 2.0f;
-    [SerializeField] private int damage = 2;
-    [SerializeField] private int reward = 10;
+    [SerializeField] public AttackType resistanceType = AttackType.NONE;
+    [SerializeField] [Range(0,1)] public float resistanceFactor = 0f;
+    [SerializeField] public float health = 10;
+    [SerializeField] public float initialSpeed = 2.0f;
+    [SerializeField] public int damage = 2;
+    [SerializeField] public int reward = 10;
 
     [Header("Debuffs")]
     [SerializeField] private bool isBurned = false;
@@ -38,10 +38,9 @@ public class Enemy : MonoBehaviour
         {
             initialColor = renderer.material.color;
         }
-        currentSpeed = initialSpeed;
         anim = GetComponent<Animator>();
+        currentSpeed = initialSpeed;
         initialHealth = health;
-
     }
 
     private void Start()
@@ -53,6 +52,7 @@ public class Enemy : MonoBehaviour
     {
         Move();
     }
+
     public virtual void Move()
     {
         FaceTarget();
@@ -154,13 +154,16 @@ public class Enemy : MonoBehaviour
 
     public void ReduceSpeed(float slowFactor, AttackType attackType)
     {
-        float slowAfterResistance = slowFactor;
-        if (attackType == resistanceType)
+        if (currentSpeed == initialSpeed)
         {
-            slowAfterResistance = slowFactor * (1 - resistanceFactor);
-        }
+            float slowAfterResistance = slowFactor;
+            if (attackType == resistanceType)
+            {
+                slowAfterResistance = slowFactor * (1 - resistanceFactor);
+            }
 
-        currentSpeed *= (1 - slowAfterResistance);
+            currentSpeed *= (1 - slowAfterResistance);
+        }
     }
 
     public void BackToNormalSpeed()
@@ -183,14 +186,17 @@ public class Enemy : MonoBehaviour
     private void SetBurn()
     {
         isBurned = true;
-        renderer.material.color = Color.red;
+        if (renderer != null)
+            renderer.material.color = Color.red;
     }
 
     private void RemoveBurn()
     {
         isBurned = true;
         fireTargeted = false;
-        renderer.material.color = initialColor;
+
+        if (renderer != null)
+            renderer.material.color = initialColor;
     }
 
     public void SetFireTargeted()
@@ -201,6 +207,11 @@ public class Enemy : MonoBehaviour
     public bool IsFireTargeted()
     {
         return fireTargeted;
+    }
+
+    public float GetCurrentSpeed()
+    { 
+        return currentSpeed;
     }
 
 }

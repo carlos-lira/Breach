@@ -1312,12 +1312,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 436630051}
-        m_TargetAssemblyTypeName: LevelsMenu, Assembly-CSharp
+        m_TargetAssemblyTypeName: LevelsMenu, Scripts
         m_MethodName: SetSelectedLevel
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 531722876}
-          m_ObjectArgumentAssemblyTypeName: SceneIndexComponent, Assembly-CSharp
+          m_ObjectArgumentAssemblyTypeName: SceneIndexComponent, Scripts
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3632,12 +3632,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 436630051}
-        m_TargetAssemblyTypeName: LevelsMenu, Assembly-CSharp
+        m_TargetAssemblyTypeName: LevelsMenu, Scripts
         m_MethodName: SetSelectedLevel
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1288456668}
-          m_ObjectArgumentAssemblyTypeName: SceneIndexComponent, Assembly-CSharp
+          m_ObjectArgumentAssemblyTypeName: SceneIndexComponent, Scripts
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -6387,12 +6387,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 436630051}
-        m_TargetAssemblyTypeName: LevelsMenu, Assembly-CSharp
+        m_TargetAssemblyTypeName: LevelsMenu, Scripts
         m_MethodName: SetSelectedLevel
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 2061828815}
-          m_ObjectArgumentAssemblyTypeName: SceneIndexComponent, Assembly-CSharp
+          m_ObjectArgumentAssemblyTypeName: SceneIndexComponent, Scripts
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

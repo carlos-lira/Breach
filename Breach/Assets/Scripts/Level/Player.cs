@@ -47,7 +47,9 @@ public class Player : MonoBehaviour
     public void DamagePlayer(float damage)
     { 
         health -= damage;
-        audioSource.PlayOneShot(hurtSound);
+
+        if (hurtSound != null)
+            audioSource.PlayOneShot(hurtSound);
 
         if (health <= 0)
         { 

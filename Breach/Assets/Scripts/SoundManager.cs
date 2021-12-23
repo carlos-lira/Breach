@@ -19,11 +19,14 @@ public class SoundManager : MonoBehaviour
             return;
         }
         instance = this;
-        
+    }
+    #endregion
+
+    private void Start()
+    {
         GetSoundSettings();
         UpdateAudioSources();
     }
-    #endregion
 
     private void Update()
     {
